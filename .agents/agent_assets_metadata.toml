@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "0EEry16T8ym4zLkf-Z_sr"
+uri = "file://artifacts/mediona-rug-revival/src/assets/hero-bg.png"
+type = "image"
+title = "Moroccan rug weaving close up"
+
+[[generated]]
+id = "vAl9dLmOTVDfJqTMp7AeW"
+uri = "file://artifacts/mediona-rug-revival/src/assets/rug-1.png"
+type = "image"
+title = "Red and beige Mediona rug"
+
+[[generated]]
+id = "pVtPh1Bp30LhVVf8ohDCm"
+uri = "file://artifacts/mediona-rug-revival/src/assets/rug-2.png"
+type = "image"
+title = "Black and white geometric rug"
+
+[[generated]]
+id = "P9g44F8zpLMDDvnvKrDOp"
+uri = "file://artifacts/mediona-rug-revival/src/assets/rug-3.png"
+type = "image"
+title = "Intricate large Mediona rug"

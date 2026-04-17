@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Mediona Rug Revival"
+version = "1.0.0"
+id = "artifacts/mediona-rug-revival"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22716
+
+[services.development]
+run = "pnpm --filter @workspace/mediona-rug-revival run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mediona-rug-revival", "run", "build" ]
+publicDir = "artifacts/mediona-rug-revival/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22716"
+BASE_PATH = "/"

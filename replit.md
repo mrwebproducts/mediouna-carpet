@@ -4,6 +4,17 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+### Mediona Rug Revival
+
+Frontend-only React/Vite hackathon MVP for a Moroccan rug heritage showcase and artisan pre-order concept. The app lives in `artifacts/mediona-rug-revival` and is served at `/`.
+
+Key product features:
+- Multilingual UI with English, French, and Arabic language toggle, including RTL handling for Arabic.
+- Landing page, cultural story page, shop page, product detail pages, QR story pages, and learning/quiz page.
+- Simulated rug/artisan/cultural data in `src/lib/data.ts`.
+- Translation strings and language context in `src/lib/i18n.tsx`.
+- No backend or database required for the MVP; order form and quiz interactions are simulated client-side.
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
@@ -15,6 +26,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
+- **Web frontend**: React + Vite + Tailwind CSS
 
 ## Key Commands
 
