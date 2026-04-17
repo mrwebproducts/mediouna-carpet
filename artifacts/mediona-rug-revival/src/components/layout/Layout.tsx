@@ -42,7 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               م
             </span>
             <span className="font-serif text-lg md:text-xl font-bold text-primary tracking-tight">
-              {t("brand")}
+              {language === "ar" ? "سجاد مديونة" : t("brand")}
             </span>
           </Link>
 
