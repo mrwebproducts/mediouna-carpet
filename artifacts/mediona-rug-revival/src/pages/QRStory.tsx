@@ -3,17 +3,19 @@ import { rugs } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { useParams } from "wouter";
 
+const storyVideoUrl = "https://www.youtube-nocookie.com/embed/mfGZ5osj0k8?start=44&rel=0&modestbranding=1&playsinline=1";
+
 export default function QRStory() {
   const { id } = useParams();
-  const { t } = useLanguage();
+  const { t, language, dir } = useLanguage();
 
   const rug = rugs.find((r) => r.id === id);
 
   if (!rug) {
     return (
       <Layout>
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <h1 className="text-2xl font-serif">Story not found</h1>
+        <div className="flex min-h-[60vh] items-center justify-center px-4 text-center">
+          <h1 className="text-2xl font-bold text-primary">{t("qr.notFound")}</h1>
         </div>
       </Layout>
     );
@@ -21,63 +23,72 @@ export default function QRStory() {
 
   return (
     <Layout>
-      <div className="bg-background min-h-screen py-12 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          
-          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <span className="inline-block px-4 py-1.5 mb-4 bg-primary text-primary-foreground text-xs font-sans uppercase tracking-widest rounded-sm">
-              Digital Heritage Tag
+      <div className="min-h-screen bg-background py-12 md:py-20">
+        <div className="container mx-auto max-w-5xl px-4" dir={dir}>
+          <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <span className="mb-5 inline-flex rounded-full bg-primary px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
+              {t("qr.badge")}
             </span>
-            <h1 className="text-4xl md:text-5xl font-serif text-primary leading-tight mb-4">{rug.name}</h1>
-            <p className="text-lg font-sans text-muted-foreground">{t("product.by")} <span className="font-bold text-foreground">{rug.artisan}</span></p>
-          </div>
-
-          <div className="aspect-video lg:aspect-[21/9] w-full overflow-hidden rounded-sm bg-muted mb-12 shadow-xl animate-in fade-in zoom-in-95 duration-1000 delay-150 fill-mode-both relative">
-            <img 
-              src={rug.image} 
-              alt={rug.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-6 md:p-8">
-              <p className="text-white font-serif text-xl md:text-2xl italic max-w-2xl">
-                "{rug.story.split('.')[0]}."
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
-            <div className="space-y-6">
-              <div className="bg-card p-8 rounded-sm border border-border shadow-sm h-full">
-                <h3 className="text-lg font-sans font-bold uppercase tracking-widest text-primary mb-4 border-b border-border pb-4">The Complete Story</h3>
-                <p className="font-sans text-lg leading-relaxed text-foreground">{rug.story}</p>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-card p-8 rounded-sm border border-border shadow-sm h-full">
-                <h3 className="text-lg font-sans font-bold uppercase tracking-widest text-primary mb-4 border-b border-border pb-4">{t("product.symbols")}</h3>
-                <p className="font-sans text-lg leading-relaxed text-foreground">{rug.symbols}</p>
-                
-                <div className="mt-8 pt-8 border-t border-border flex items-center justify-between">
-                  <div>
-                    <p className="font-sans text-sm text-muted-foreground uppercase tracking-wider mb-1">Creation Time</p>
-                    <p className="font-serif text-2xl text-foreground">{rug.timeToCreate}</p>
-                  </div>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
-                     <span className="font-serif text-primary text-2xl font-bold">M</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="font-serif text-muted-foreground italic text-lg max-w-2xl mx-auto">
-              This digital record ensures that the story of this rug, and the hands that wove it, are never lost to time.
+            <h1 className="mb-4 text-4xl font-extrabold leading-tight text-primary md:text-6xl">{rug.name[language]}</h1>
+            <p className="text-lg text-muted-foreground">
+              {t("product.by")}: <span className="font-bold text-foreground">{rug.artisan[language]}</span>
             </p>
           </div>
 
+          <section className="relative mb-10 overflow-hidden rounded-3xl bg-muted shadow-2xl animate-in fade-in zoom-in-95 duration-1000 delay-150 fill-mode-both">
+            <div className="aspect-video md:aspect-[21/9]">
+              <img src={rug.image} alt={rug.name[language]} className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+            <div className="absolute bottom-0 start-0 p-6 md:p-9">
+              <p className="max-w-3xl text-xl font-bold leading-9 text-white md:text-3xl">
+                {t("qr.title")}
+              </p>
+            </div>
+          </section>
+
+          <section className="story-card mb-10 rounded-3xl p-5 md:p-7 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
+            <div className="mb-4 space-y-2">
+              <h2 className="text-2xl font-bold text-primary">{t("product.videoTitle")}</h2>
+              <p className="leading-7 text-muted-foreground">{t("product.videoContext")}</p>
+            </div>
+            <div className="video-frame">
+              <iframe
+                className="h-full w-full"
+                src={storyVideoUrl}
+                title={t("product.videoTitle")}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </section>
+
+          <div className="grid gap-8 md:grid-cols-2 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
+            <section className="story-card rounded-3xl p-7 md:p-8">
+              <h3 className="mb-5 border-b border-border pb-4 text-lg font-extrabold uppercase tracking-widest text-primary">{t("qr.completeStory")}</h3>
+              <p className="text-lg leading-9 text-foreground">{rug.story[language]}</p>
+            </section>
+
+            <section className="story-card rounded-3xl p-7 md:p-8">
+              <h3 className="mb-5 border-b border-border pb-4 text-lg font-extrabold uppercase tracking-widest text-primary">{t("qr.meaning")}</h3>
+              <p className="text-lg leading-9 text-foreground">{rug.symbols[language]}</p>
+
+              <div className="mt-8 grid gap-5 border-t border-border pt-8 sm:grid-cols-2">
+                <div>
+                  <p className="mb-1 text-sm font-bold uppercase tracking-wider text-muted-foreground">{t("product.time")}</p>
+                  <p className="text-2xl font-bold text-foreground">{rug.timeToCreate[language]}</p>
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-bold uppercase tracking-wider text-muted-foreground">{t("product.origin")}</p>
+                  <p className="text-2xl font-bold text-foreground">{t("product.originValue")}</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div className="mx-auto mt-14 max-w-3xl rounded-3xl border border-primary/20 bg-primary/8 p-7 text-center">
+            <p className="text-lg font-bold leading-9 text-primary">{t("qr.note")}</p>
+          </div>
         </div>
       </div>
     </Layout>

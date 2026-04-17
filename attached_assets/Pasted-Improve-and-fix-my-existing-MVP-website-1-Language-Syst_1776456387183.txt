@@ -1,0 +1,83 @@
+Improve and fix my existing MVP website .
+
+1. Language System (IMPORTANT FIX)
+Fix translation issues: all content must fully translate when switching language.
+Ensure NO mixed languages in the same section.
+Default language must be Arabic.
+Add a proper language switcher (Arabic / French / English) that works perfectly across all pages.
+2. Arabic Typography
+Use a beautiful Arabic font (like "Cairo" or "Tajawal")
+Improve spacing and readability for Arabic text
+Ensure RTL (right-to-left) layout works perfectly
+Align text properly when Arabic is selected
+3. Fix Home Page Buttons
+Fix the main buttons:
+“اكتشف القصة”
+“تسوق الآن”
+“تعلم”
+Ensure ALL buttons are visible and clickable
+Add hover effects and animations
+Make “تعلم” clearly visible (currently hidden or broken)
+4. Educational Video (FIX + EMBED)
+
+Embed this YouTube video properly WITHOUT showing YouTube branding as much as possible:
+
+https://www.youtube.com/watch?v=rsoj6vzlPpk
+
+Use embed mode (iframe)
+Make it responsive
+Add a clean video section design
+5. Story Videos (Product Pages)
+
+Use this video as example for all story sections:
+
+https://www.youtube.com/watch?v=mfGZ5osj0k8&t=44s
+
+Embed it nicely inside product/story pages
+Add title and context
+Make it part of storytelling
+6. Improve Content (VERY IMPORTANT)
+
+Rewrite ALL texts to be:
+
+More emotional
+More cultural
+More storytelling-focused
+
+Goal:
+Make the user feel the value of Mediona rugs.
+
+Example tone:
+“You are not just buying a rug, you are preserving a cultural legacy.”
+
+7. Improve Home Page Content
+
+Replace the current hero content with something more powerful:
+
+Strong emotional headline about saving heritage
+Short impactful description
+Highlight:
+Culture
+Artisan
+Youth learning
+
+Make the homepage feel like a premium cultural startup.
+
+ 8. UI/UX Improvements
+Improve spacing and layout
+Add smooth animations (fade, hover, transitions)
+Keep design clean and elegant
+Make it look like a real startup website
+📱 9. Responsiveness
+Ensure everything works perfectly on mobile
+Fix any broken layout issues
+🎯 Final Goal:
+
+Make the website:
+
+Emotionally engaging
+Culturally rich
+Visually modern
+Fully functional for demo
+
+This is a hackathon project, but it should look like a real startup product.

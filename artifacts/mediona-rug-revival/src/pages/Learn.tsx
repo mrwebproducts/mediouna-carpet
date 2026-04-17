@@ -3,18 +3,24 @@ import { useLanguage } from "@/lib/i18n";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const steps = [
-  { id: 1, title: "Tools of the Trade", description: "Learn about the loom, the comb, and the scissors." },
-  { id: 2, title: "Preparing the Wool", description: "Washing, carding, and spinning the raw sheep's wool." },
-  { id: 3, title: "Starting the Loom", description: "Setting up the warp threads to create the foundation." },
-  { id: 4, title: "Weaving Patterns", description: "Tying the knots and creating the intricate symbols." },
-  { id: 5, title: "Finishing Touches", description: "Trimming the pile, tying the fringes, and washing the final piece." }
-];
+const educationVideoUrl = "https://www.youtube-nocookie.com/embed/rsoj6vzlPpk?rel=0&modestbranding=1&playsinline=1";
 
 export default function Learn() {
-  const { t } = useLanguage();
+  const { t, dir } = useLanguage();
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+
+  const steps = [1, 2, 3, 4, 5].map((step) => ({
+    id: step,
+    title: t(`learn.level${step}`),
+    description: t(`learn.level${step}.desc`),
+  }));
+
+  const answers = [
+    t("learn.quiz.answer1"),
+    t("learn.quiz.answer2"),
+    t("learn.quiz.answer3"),
+  ];
 
   const handleQuizSubmit = () => {
     if (selectedAnswer !== null) {
@@ -24,103 +30,93 @@ export default function Learn() {
 
   return (
     <Layout>
-      <div className="bg-background min-h-screen py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
-          
-          <div className="text-center space-y-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <h1 className="text-4xl md:text-5xl font-serif text-primary">{t("learn.title")}</h1>
-            <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto">
-              Follow the journey of a Mediona rug from raw wool to a finished masterpiece.
-            </p>
-            <div className="w-12 h-1 bg-accent mx-auto"></div>
+      <div className="min-h-screen bg-background py-16 md:py-24">
+        <div className="container mx-auto max-w-6xl px-4" dir={dir}>
+          <div className="mx-auto mb-14 max-w-4xl text-center space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <h1 className="text-4xl font-extrabold text-primary md:text-6xl">{t("learn.title")}</h1>
+            <p className="mx-auto max-w-3xl text-lg leading-9 text-muted-foreground">{t("learn.subtitle")}</p>
+            <div className="mx-auto h-1.5 w-16 rounded-full bg-accent" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            {/* Steps Timeline */}
-            <div className="lg:col-span-1 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent hidden lg:block">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.95fr_1.45fr]">
+            <div className="space-y-4">
               {steps.map((step, index) => (
-                <div key={step.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-background text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 font-serif font-bold">
-                    {step.id}
+                <article
+                  key={step.id}
+                  className="story-card rounded-3xl p-5 animate-in fade-in slide-in-from-bottom-6 duration-700"
+                  style={{ animationDelay: `${index * 110}ms`, animationFillMode: "both" }}
+                >
+                  <div className="flex gap-4 items-start">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-extrabold text-primary-foreground shadow-md">
+                      {step.id}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-primary">{step.title}</h3>
+                      <p className="mt-2 leading-7 text-muted-foreground">{step.description}</p>
+                    </div>
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-sm border border-border bg-card shadow-sm">
-                    <h3 className="font-serif font-bold text-lg mb-1 text-primary">{step.title}</h3>
-                    <p className="font-sans text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
+                </article>
               ))}
             </div>
 
-            {/* Mobile Steps (Simple List) */}
-            <div className="lg:hidden space-y-4">
-              {steps.map((step) => (
-                <div key={step.id} className="flex gap-4 items-start p-4 rounded-sm border border-border bg-card shadow-sm">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-serif font-bold shrink-0">
-                    {step.id}
-                  </div>
-                  <div>
-                    <h3 className="font-serif font-bold text-lg mb-1 text-primary">{step.title}</h3>
-                    <p className="font-sans text-sm text-muted-foreground">{step.description}</p>
-                  </div>
+            <div className="space-y-10">
+              <section className="story-card rounded-3xl p-5 md:p-7 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150 fill-mode-both">
+                <div className="mb-5 space-y-2">
+                  <h2 className="text-2xl font-bold text-primary md:text-3xl">{t("learn.videoTitle")}</h2>
+                  <p className="leading-7 text-muted-foreground">{t("learn.videoCaption")}</p>
                 </div>
-              ))}
-            </div>
-
-            <div className="lg:col-span-2 space-y-12">
-              {/* Educational Video */}
-              <div className="space-y-4 animate-in fade-in slide-in-from-right-8 duration-700 delay-150 fill-mode-both">
-                <h2 className="text-2xl font-serif text-secondary">The Master Weaver's Process</h2>
-                <div className="aspect-video bg-secondary rounded-sm flex items-center justify-center flex-col text-secondary-foreground shadow-lg border-4 border-white">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 cursor-pointer hover:scale-110 transition-transform">
-                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-1"></div>
-                  </div>
-                  <span className="font-sans text-sm">Play Masterclass</span>
+                <div className="video-frame">
+                  <iframe
+                    className="h-full w-full"
+                    src={educationVideoUrl}
+                    title={t("learn.videoTitle")}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-              </div>
+              </section>
 
-              {/* Quiz */}
-              <div className="bg-primary/5 p-8 rounded-sm border border-primary/20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
-                <h2 className="text-2xl font-serif text-primary mb-6">{t("learn.quiz.title")}</h2>
-                
+              <section className="rounded-3xl border border-primary/20 bg-primary/8 p-7 md:p-9 shadow-sm animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
+                <h2 className="mb-6 text-2xl font-bold text-primary">{t("learn.quiz.title")}</h2>
+
                 {quizSubmitted ? (
-                  <div className="text-center py-8">
-                    <div className="text-4xl mb-4">✨</div>
-                    <h3 className="text-xl font-serif font-bold text-primary mb-2">Excellent!</h3>
-                    <p className="font-sans text-muted-foreground">You are on your way to understanding Mediona rug craftsmanship.</p>
+                  <div className="rounded-3xl bg-card p-8 text-center shadow-sm">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">✓</div>
+                    <h3 className="mb-2 text-2xl font-bold text-primary">{t("learn.quiz.success")}</h3>
+                    <p className="leading-8 text-muted-foreground">{t("learn.quiz.successText")}</p>
                   </div>
                 ) : (
                   <div className="space-y-6">
-                    <p className="font-sans text-lg font-medium text-foreground">What does the diamond shape commonly represent in Mediona rug patterns?</p>
-                    
+                    <p className="text-lg font-bold leading-8 text-foreground">{t("learn.quiz.question")}</p>
+
                     <div className="space-y-3">
-                      {[
-                        "Water and rainfall",
-                        "A woman or protection from the evil eye",
-                        "The Atlas Mountains"
-                      ].map((answer, index) => (
+                      {answers.map((answer, index) => (
                         <button
-                          key={index}
+                          key={answer}
+                          type="button"
                           onClick={() => setSelectedAnswer(index)}
-                          className={`w-full text-left p-4 rounded-none border ${selectedAnswer === index ? 'border-primary bg-primary/10 text-primary' : 'border-border bg-background hover:bg-muted'} font-sans transition-colors`}
+                          className={`w-full rounded-2xl border p-4 text-start leading-7 transition-all duration-300 ${
+                            selectedAnswer === index
+                              ? "border-primary bg-primary/10 text-primary shadow-md"
+                              : "border-border bg-background hover:-translate-y-0.5 hover:bg-muted"
+                          }`}
                         >
                           {answer}
                         </button>
                       ))}
                     </div>
 
-                    <Button 
-                      onClick={handleQuizSubmit} 
+                    <Button
+                      onClick={handleQuizSubmit}
                       disabled={selectedAnswer === null}
-                      className="w-full rounded-none h-12 bg-primary text-primary-foreground font-sans mt-4"
+                      className="h-13 w-full rounded-2xl bg-primary text-base font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90 disabled:opacity-50"
                     >
-                      Check Answer
+                      {t("learn.quiz.submit")}
                     </Button>
                   </div>
                 )}
-              </div>
+              </section>
             </div>
-            
           </div>
         </div>
       </div>
