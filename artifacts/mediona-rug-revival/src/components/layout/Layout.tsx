@@ -38,11 +38,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground font-serif text-xl font-bold shadow-lg transition-transform group-hover:scale-105">
-              م
-            </span>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground font-serif text-xl font-bold shadow-lg transition-transform group-hover:scale-105">M</span>
             <span className="font-serif text-lg md:text-xl font-bold text-primary tracking-tight">
-              {language === "ar" ? "سجاد مديونة" : t("brand")}
+              {language === "ar" ? "سجاد مديونة" : "Mediona Revival"}
             </span>
           </Link>
 
@@ -77,9 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
         )}
       </header>
-
       <main className="flex-1 flex flex-col">{children}</main>
-
       <footer className="border-t border-border bg-secondary py-12 text-secondary-foreground">
         <div className="container mx-auto px-4 text-center space-y-4">
           <h2 className="text-2xl font-serif text-accent">{t("brand")}</h2>
