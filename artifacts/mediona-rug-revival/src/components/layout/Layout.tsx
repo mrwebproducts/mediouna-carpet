@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground font-serif text-xl font-bold shadow-lg transition-transform group-hover:scale-105">♨</span>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground font-serif font-bold shadow-lg transition-transform group-hover:scale-105 text-[40px]">♨</span>
             <span className="font-serif text-lg md:text-xl font-bold text-primary tracking-tight">
               {language === "ar" ? "سجاد مديونة" : "Mediona Revival"}
             </span>
