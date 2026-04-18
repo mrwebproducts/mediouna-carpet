@@ -50,11 +50,6 @@ export default function Home() {
                   {t("hero.learn")}
                 </Button>
               </Link>
-              <Link href="/register" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="h-14 w-full rounded-2xl border-white/70 bg-black/20 px-8 text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-black sm:w-auto">
-                  {t("hero.register")}
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
