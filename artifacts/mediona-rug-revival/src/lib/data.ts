@@ -1,4 +1,8 @@
 import type { Language } from "./i18n";
+import heroBg from "@/assets/hero-bg.png";
+import rug1 from "@/assets/rug-1.png";
+import rug2 from "@/assets/rug-2.png";
+import rug3 from "@/assets/rug-3.png";
 
 export type LocalizedText = Record<Language, string>;
 
@@ -27,7 +31,7 @@ export const rugs: Rug[] = [
       en: "Fatima Zahra"
     },
     price: 800,
-    image: "/src/assets/rug-1.png",
+    image: rug1,
     story: {
       ar: "نُسجت هذه السجادة في ساعات الصباح الأولى، حين كان الضوء يلمس الصوف مثل وعد جديد. وضعت فاطمة الزهراء في كل عقدة ذكرى من بيتها ورغبة في أن يصل دفء مديونة إلى بيت آخر. ليست قطعة جميلة فحسب، بل شهادة على امرأة اختارت أن تحفظ ما تعلمته من والدتها بخيط وصبر.",
       fr: "Ce tapis a été tissé aux premières heures du matin, lorsque la lumière touchait la laine comme une promesse. Fatima Zahra a placé dans chaque nœud un souvenir de sa maison et le désir de transmettre la chaleur de Mediona à un autre foyer. Ce n'est pas seulement une belle pièce, c'est le témoignage d'une femme qui protège ce que sa mère lui a appris.",
@@ -57,7 +61,7 @@ export const rugs: Rug[] = [
       en: "Amina Youssef"
     },
     price: 1500,
-    image: "/src/assets/rug-2.png",
+    image: rug2,
     story: {
       ar: "تعلمت أمينة هذا النمط من جدتها، لا كرسمة تُنسخ، بل كحكاية تُروى من جديد. اختارت صوفاً طبيعياً غير مصبوغ ليبقى اللون قريباً من الأرض والقطيع والذاكرة. كل اختلاف صغير في النسيج يذكرنا أن التراث لا يعيش لأنه كامل، بل لأنه إنساني.",
       fr: "Amina a appris ce motif de sa grand-mère, non comme un dessin à copier, mais comme une histoire à raconter à nouveau. Elle a choisi une laine naturelle non teinte pour garder la couleur proche de la terre, du troupeau et de la mémoire. Chaque petite variation rappelle que le patrimoine vit parce qu'il est humain.",
@@ -87,7 +91,7 @@ export const rugs: Rug[] = [
       en: "Khadija Benali"
     },
     price: 3000,
-    image: "/src/assets/rug-3.png",
+    image: rug3,
     story: {
       ar: "خديجة بنعلي نسجت هذه القطعة كما يكتب الشاعر قصيدة طويلة. أربعون عاماً من الخبرة اجتمعت في سجادة واحدة: ذاكرة العائلة، قوة المرأة، وفرح الحصاد. هذه التحفة لا تطلب أن تُشاهد فقط؛ تطلب أن تُصان كجزء من هوية مديونة.",
       fr: "Khadija Benali a tissé cette pièce comme une poète écrit un long poème. Quarante ans d'expérience se réunissent dans un seul tapis : mémoire familiale, force des femmes et joie des récoltes. Cette œuvre ne demande pas seulement à être regardée ; elle demande à être préservée comme une partie de l'identité de Mediona.",
@@ -119,7 +123,7 @@ export const cultureSections = [
       fr: "Dans les maisons de Mediona, le tissage n'était pas une activité secondaire ; c'était une manière de garder les histoires. Les femmes apprenaient de leurs mères comment transformer la laine en chaleur et les symboles en archives de la vie quotidienne : mariage, pluie, récoltes et protection du foyer. Aujourd'hui, nous présentons cette histoire dans un langage numérique.",
       en: "In Mediona homes, weaving was never a side activity; it was a way to protect stories. Women learned from their mothers how wool becomes warmth and how symbols become records of daily life: marriage, rain, harvest, and care for the home. Today we retell this history through digital tools so it is not hidden in memory alone."
     },
-    image: "/src/assets/hero-bg.png",
+    image: heroBg,
     relatedRugId: "3"
   },
   {
@@ -134,7 +138,7 @@ export const cultureSections = [
       fr: "Le tapis commence avec une laine locale lavée, cardée et filée avec soin. Les couleurs traditionnelles viennent de la nature : garance pour le rouge, grenade et henné pour la chaleur, nuances naturelles de laine pour la douceur. La pièce porte donc la terre et le travail collectif avant même sa forme finale.",
       en: "The rug begins with local wool that is washed, carded, and spun with care. Traditional colors come from nature: madder root for red, pomegranate and henna for warmth, and natural wool tones for calm. The piece carries the earth and communal labor before it carries its final shape."
     },
-    image: "/src/assets/rug-2.png",
+    image: rug2,
     relatedRugId: "2"
   },
   {
@@ -149,7 +153,7 @@ export const cultureSections = [
       fr: "Les motifs du tapis sont une langue visuelle. Le losange peut protéger le foyer, le zigzag évoque l'eau et la vie, les bordures répétées parlent de continuité. Comprendre ces symboles permet de voir le tapis comme un message d'une femme au monde, et non comme une décoration silencieuse.",
       en: "Rug motifs are a visual language. The diamond may protect the home, the zigzag calls for water and life, and repeated borders speak of continuity. When we understand these symbols, the rug becomes a message from a woman to the world, not silent decoration."
     },
-    image: "/src/assets/rug-1.png",
+    image: rug1,
     relatedRugId: "1"
   },
   {
@@ -164,7 +168,7 @@ export const cultureSections = [
       fr: "Les pièces de Mediona varient entre tapis du quotidien, œuvres cérémonielles riches en symboles et grandes pièces tissées pour les occasions ou la vente. Elles partagent la présence de la main et de l'histoire : deux tapis ne sont jamais identiques car chacun porte un moment humain différent.",
       en: "Mediona pieces range from warm everyday rugs to ceremonial works rich with symbols and larger pieces woven for special moments or sale. What unites them is the presence of the hand and the story: no two rugs are identical because each carries a different human moment."
     },
-    image: "/src/assets/rug-3.png",
+    image: rug3,
     relatedRugId: "3"
   }
 ];

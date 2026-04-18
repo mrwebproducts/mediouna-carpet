@@ -11,6 +11,7 @@ import Shop from "@/pages/Shop";
 import Product from "@/pages/Product";
 import Learn from "@/pages/Learn";
 import QRStory from "@/pages/QRStory";
+import Register from "@/pages/Register";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/shop" component={Shop} />
       <Route path="/rug/:id" component={Product} />
       <Route path="/learn" component={Learn} />
+      <Route path="/register" component={Register} />
       <Route path="/qr/:id" component={QRStory} />
       <Route component={NotFound} />
     </Switch>

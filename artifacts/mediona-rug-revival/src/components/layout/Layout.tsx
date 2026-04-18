@@ -49,6 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/culture" className="hover:text-primary transition-colors">{t("nav.culture")}</Link>
             <Link href="/shop" className="hover:text-primary transition-colors">{t("nav.shop")}</Link>
             <Link href="/learn" className="hover:text-primary transition-colors">{t("nav.learn")}</Link>
+            <Link href="/register" className="rounded-full bg-primary px-4 py-2 text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">{t("nav.register")}</Link>
           </nav>
 
           <div className="hidden md:block">{languageSwitcher}</div>
@@ -70,6 +71,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/culture" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl px-4 py-3 hover:bg-muted">{t("nav.culture")}</Link>
               <Link href="/shop" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl px-4 py-3 hover:bg-muted">{t("nav.shop")}</Link>
               <Link href="/learn" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl px-4 py-3 hover:bg-muted">{t("nav.learn")}</Link>
+              <Link href="/register" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/90">{t("nav.register")}</Link>
             </nav>
             <div className="mt-4 flex justify-center border-t border-border pt-4">{languageSwitcher}</div>
           </div>

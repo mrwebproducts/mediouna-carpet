@@ -13,9 +13,11 @@ Key product features:
 - Arabic is the default language and uses dedicated Arabic typography.
 - Rug, product, culture, learning, QR story, form, and navigation copy are localized in Arabic, French, and English.
 - Landing page, cultural story page, shop page, product detail pages, QR story pages, and learning/quiz page.
+- Visitor registration page at `/register` with simulated roles for sellers, buyers, and learners.
 - Simulated rug/artisan/cultural data in `src/lib/data.ts`.
 - Translation strings and language context in `src/lib/i18n.tsx`.
 - Embedded YouTube videos are used for the learning section and product/story pages via privacy-enhanced embed URLs.
+- Images are imported through Vite asset imports rather than `/src/assets/...` string paths so they are bundled correctly for publishing.
 - No backend or database required for the MVP; order form and quiz interactions are simulated client-side.
 
 ## Stack

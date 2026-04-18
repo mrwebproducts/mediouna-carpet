@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useLanguage } from "@/lib/i18n";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.png";
 
 export default function Home() {
   const { t, dir } = useLanguage();
@@ -11,7 +12,7 @@ export default function Home() {
       <section className="relative min-h-[calc(100vh-5rem)] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/hero-bg.png"
+            src={heroBg}
             alt={t("hero.kicker")}
             className="h-full w-full object-cover scale-105"
           />
@@ -49,6 +50,11 @@ export default function Home() {
                   {t("hero.learn")}
                 </Button>
               </Link>
+              <Link href="/register" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="h-14 w-full rounded-2xl border-white/70 bg-black/20 px-8 text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-black sm:w-auto">
+                  {t("hero.register")}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -70,6 +76,16 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-foreground">{item}</h3>
               </div>
             ))}
+          </div>
+
+          <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-primary/20 bg-primary/8 p-8 text-center shadow-sm" dir={dir}>
+            <h3 className="text-3xl font-extrabold text-primary">{t("home.join.title")}</h3>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">{t("home.join.text")}</p>
+            <Link href="/register">
+              <Button className="mt-7 h-13 rounded-2xl bg-primary px-8 text-base font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90">
+                {t("home.join.cta")}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
