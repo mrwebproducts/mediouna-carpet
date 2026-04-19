@@ -12,6 +12,8 @@ import Product from "@/pages/Product";
 import Learn from "@/pages/Learn";
 import QRStory from "@/pages/QRStory";
 import Register from "@/pages/Register";
+import AdminLogin from "@/pages/AdminLogin";
+import AdminOrders from "@/pages/AdminOrders";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ function Router() {
       <Route path="/learn" component={Learn} />
       <Route path="/register" component={Register} />
       <Route path="/qr/:id" component={QRStory} />
+      <Route path="/admin" component={AdminLogin} />
+      <Route path="/admin/orders" component={AdminOrders} />
       <Route component={NotFound} />
     </Switch>
   );

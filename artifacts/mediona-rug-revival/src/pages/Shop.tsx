@@ -3,6 +3,7 @@ import { rugs } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { CustomCarpetCard } from "@/components/CustomCarpetCard";
 
 export default function Shop() {
   const { t, language, dir } = useLanguage();
@@ -11,18 +12,29 @@ export default function Shop() {
     <Layout>
       <div className="min-h-screen bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-3xl text-center space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700" dir={dir}>
-            <h1 className="text-4xl font-extrabold text-primary md:text-6xl">{t("shop.title")}</h1>
-            <p className="text-lg leading-9 text-muted-foreground">{t("shop.subtitle")}</p>
+          <div
+            className="mx-auto mb-16 max-w-3xl text-center space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700"
+            dir={dir}
+          >
+            <h1 className="text-4xl font-extrabold text-primary md:text-6xl">
+              {t("shop.title")}
+            </h1>
+            <p className="text-lg leading-9 text-muted-foreground">
+              {t("shop.subtitle")}
+            </p>
             <div className="mx-auto h-1.5 w-16 rounded-full bg-accent" />
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <CustomCarpetCard />
             {rugs.map((rug, index) => (
               <article
                 key={rug.id}
                 className="group story-card flex flex-col overflow-hidden rounded-3xl animate-in fade-in slide-in-from-bottom-8"
-                style={{ animationDelay: `${index * 140}ms`, animationFillMode: "both" }}
+                style={{
+                  animationDelay: `${index * 140}ms`,
+                  animationFillMode: "both",
+                }}
                 dir={dir}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-muted">
@@ -38,14 +50,19 @@ export default function Shop() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-2xl font-bold text-foreground">{rug.name[language]}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {rug.name[language]}
+                  </h3>
                   <p className="mt-2 text-sm font-semibold text-muted-foreground">
                     {t("product.by")}: {rug.artisan[language]}
                   </p>
 
                   <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <Link href={`/rug/${rug.id}`}>
-                      <Button variant="outline" className="h-12 w-full rounded-2xl border-primary text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground">
+                      <Button
+                        variant="outline"
+                        className="h-12 w-full rounded-2xl border-primary text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
+                      >
                         {t("shop.discover")}
                       </Button>
                     </Link>
