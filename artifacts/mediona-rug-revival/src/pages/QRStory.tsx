@@ -29,7 +29,7 @@ export default function QRStory() {
             <span className="mb-5 inline-flex rounded-full bg-primary px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
               {t("qr.badge")}
             </span>
-            <h1 className="mb-4 text-4xl font-extrabold leading-tight text-primary md:text-6xl">{rug.name[language]}</h1>
+            <h1 className="mb-4 text-4xl font-extrabold leading-tight text-primary md:text-6xl break-words">{rug.name[language]}</h1>
             <p className="text-lg text-muted-foreground">
               {t("product.by")}: <span className="font-bold text-foreground">{rug.artisan[language]}</span>
             </p>

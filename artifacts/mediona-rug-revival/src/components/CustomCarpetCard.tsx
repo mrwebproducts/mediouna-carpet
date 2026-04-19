@@ -225,10 +225,10 @@ export function CustomCarpetCard() {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row flex-1 min-h-0 overflow-hidden">
+              <div className="flex flex-col lg:flex-row flex-1 min-h-0 min-w-0 overflow-hidden">
 
                 {/* ── LEFT: Preview Panel ── */}
-                <div className="lg:w-72 xl:w-80 shrink-0 bg-neutral-900 flex flex-col items-center justify-center gap-4 p-6 relative overflow-hidden">
+                <div className="w-full lg:w-72 xl:w-80 shrink-0 bg-neutral-900 flex flex-col items-center justify-center gap-4 p-6 relative overflow-hidden max-h-72 lg:max-h-none">
                   <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)", backgroundSize: "12px 12px" }} />
 
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-400 relative z-10">{t("custom.preview")}</p>
@@ -434,7 +434,7 @@ export function CustomCarpetCard() {
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-6 sm:grid-cols-12 gap-2">
+                      <div className="grid grid-cols-6 gap-2">
                         {PALETTE.map(({ color, label }) => {
                           const selected = selectedColors.includes(color);
                           const maxed = !selected && selectedColors.length >= MAX_COLORS;

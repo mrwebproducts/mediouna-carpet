@@ -35,7 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-background text-foreground">
+    <div className="min-h-[100dvh] flex flex-col bg-background text-foreground overflow-x-hidden">
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="group flex items-center gap-3">
@@ -63,7 +63,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/98 p-4 shadow-xl animate-in fade-in slide-in-from-top-3 duration-300">
+          <div className="md:hidden border-t border-border bg-background/98 p-4 shadow-xl animate-in fade-in slide-in-from-top-3 duration-300 max-h-[calc(100dvh-5rem)] overflow-y-auto">
             <nav className="flex flex-col gap-3 text-lg font-semibold text-start" dir={dir}>
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl px-4 py-3 hover:bg-muted">{t("nav.home")}</Link>
               <Link href="/culture" onClick={() => setMobileMenuOpen(false)} className="rounded-2xl px-4 py-3 hover:bg-muted">{t("nav.culture")}</Link>

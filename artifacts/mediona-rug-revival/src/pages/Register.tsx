@@ -25,7 +25,7 @@ export default function Register() {
       <div className="min-h-screen bg-background py-16 md:py-24">
         <div className="container mx-auto px-4" dir={dir}>
           <div className="mx-auto mb-12 max-w-3xl text-center space-y-5 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <h1 className="text-4xl font-extrabold text-primary md:text-6xl">{t("register.title")}</h1>
+            <h1 className="text-4xl font-extrabold text-primary md:text-5xl break-words">{t("register.title")}</h1>
             <p className="text-lg leading-9 text-muted-foreground">{t("register.subtitle")}</p>
             <div className="mx-auto h-1.5 w-16 rounded-full bg-accent" />
           </div>

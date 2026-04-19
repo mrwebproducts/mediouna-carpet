@@ -71,10 +71,12 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden;
     background-image:
       radial-gradient(circle at 15% 10%, hsl(var(--accent) / 0.28), transparent 28rem),
       radial-gradient(circle at 85% 25%, hsl(var(--primary) / 0.10), transparent 24rem);

@@ -69,7 +69,7 @@ export default function Product() {
 
             <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 fill-mode-both">
               <div className="space-y-5">
-                <h1 className="text-4xl font-extrabold leading-tight text-primary md:text-6xl">{rug.name[language]}</h1>
+                <h1 className="text-4xl font-extrabold leading-tight text-primary md:text-6xl break-words">{rug.name[language]}</h1>
                 <div className="flex flex-wrap items-center gap-3 text-lg">
                   <span className="text-muted-foreground">{t("product.by")}: <span className="font-bold text-foreground">{rug.artisan[language]}</span></span>
                   <span className="rounded-full bg-primary px-4 py-2 text-base font-bold text-primary-foreground">{rug.price} MAD</span>
