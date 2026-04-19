@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const storyVideoUrl = "https://www.youtube-nocookie.com/embed/mfGZ5osj0k8?start=44&rel=0&modestbranding=1&playsinline=1";
+const storyVideoUrl = "https://player.vimeo.com/video/1184530951?badge=0&autopause=0&player_id=0&app_id=58479";
 
 export default function Product() {
   const { id } = useParams();
@@ -60,7 +60,7 @@ export default function Product() {
                     className="h-full w-full"
                     src={storyVideoUrl}
                     title={t("product.videoTitle")}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                     allowFullScreen
                   />
                 </div>

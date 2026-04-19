@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useLanguage, type Language } from "@/lib/i18n";
 import { Globe, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const languages: { code: Language; label: string }[] = [
   { code: "ar", label: "العربية" },
@@ -38,10 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground font-serif font-bold shadow-lg transition-transform group-hover:scale-105 text-[40px]">♨</span>
-            <span className="font-serif text-lg md:text-xl font-bold text-primary tracking-tight">
-              {language === "ar" ? "سجاد مديونة" : "Mediona Revival"}
-            </span>
+            <img src={logo} alt="Mediona Rug Revival" className="h-11 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold">

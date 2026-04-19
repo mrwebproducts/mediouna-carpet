@@ -19,36 +19,6 @@ export type Rug = {
 
 export const rugs: Rug[] = [
   {
-    id: "1",
-    name: {
-      ar: "شروق الأطلس",
-      fr: "Lever de l'Atlas",
-      en: "Atlas Sunrise"
-    },
-    artisan: {
-      ar: "فاطمة الزهراء",
-      fr: "Fatima Zahra",
-      en: "Fatima Zahra"
-    },
-    price: 800,
-    image: rug1,
-    story: {
-      ar: "نُسجت هذه السجادة في ساعات الصباح الأولى، حين كان الضوء يلمس الصوف مثل وعد جديد. وضعت فاطمة الزهراء في كل عقدة ذكرى من بيتها ورغبة في أن يصل دفء مديونة إلى بيت آخر. ليست قطعة جميلة فحسب، بل شهادة على امرأة اختارت أن تحفظ ما تعلمته من والدتها بخيط وصبر.",
-      fr: "Ce tapis a été tissé aux premières heures du matin, lorsque la lumière touchait la laine comme une promesse. Fatima Zahra a placé dans chaque nœud un souvenir de sa maison et le désir de transmettre la chaleur de Mediona à un autre foyer. Ce n'est pas seulement une belle pièce, c'est le témoignage d'une femme qui protège ce que sa mère lui a appris.",
-      en: "This rug was woven in the early morning, when light touched the wool like a promise. Fatima Zahra placed a memory of home into every knot and a wish for Mediona's warmth to reach another family. It is not just a beautiful piece; it is a testimony from a woman preserving what her mother taught her."
-    },
-    symbols: {
-      ar: "المعينات ترمز للحماية وصون البيت، أما الخطوط المتعرجة فتستحضر الماء والحياة والخصوبة. اللون الأحمر يحمل حرارة الأرض وكرامة العمل اليدوي.",
-      fr: "Les losanges évoquent la protection et le foyer, tandis que les zigzags rappellent l'eau, la vie et la fertilité. Le rouge porte la chaleur de la terre et la dignité du travail manuel.",
-      en: "The diamonds suggest protection and the home, while zigzags evoke water, life, and fertility. The red carries the warmth of the earth and the dignity of handmade work."
-    },
-    timeToCreate: {
-      ar: "4 أسابيع",
-      fr: "4 semaines",
-      en: "4 weeks"
-    }
-  },
-  {
     id: "2",
     name: {
       ar: "رحلة الرحّل",
@@ -60,7 +30,7 @@ export const rugs: Rug[] = [
       fr: "Amina Youssef",
       en: "Amina Youssef"
     },
-    price: 1500,
+    price: 5000,
     image: rug2,
     story: {
       ar: "تعلمت أمينة هذا النمط من جدتها، لا كرسمة تُنسخ، بل كحكاية تُروى من جديد. اختارت صوفاً طبيعياً غير مصبوغ ليبقى اللون قريباً من الأرض والقطيع والذاكرة. كل اختلاف صغير في النسيج يذكرنا أن التراث لا يعيش لأنه كامل، بل لأنه إنساني.",
@@ -90,7 +60,7 @@ export const rugs: Rug[] = [
       fr: "Khadija Benali",
       en: "Khadija Benali"
     },
-    price: 3000,
+    price: 7000,
     image: rug3,
     story: {
       ar: "خديجة بنعلي نسجت هذه القطعة كما يكتب الشاعر قصيدة طويلة. أربعون عاماً من الخبرة اجتمعت في سجادة واحدة: ذاكرة العائلة، قوة المرأة، وفرح الحصاد. هذه التحفة لا تطلب أن تُشاهد فقط؛ تطلب أن تُصان كجزء من هوية مديونة.",
